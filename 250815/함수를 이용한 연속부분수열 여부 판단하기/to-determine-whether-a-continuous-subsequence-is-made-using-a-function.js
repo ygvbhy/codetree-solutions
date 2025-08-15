@@ -6,9 +6,19 @@ let a = input[1].split(" ").map(Number);
 let b = input[2].split(" ").map(Number);
 
 // Please Write your code here.
-let a1 = input[1];
-let b1 = input[2];
+const solution = (a1, b1) {
+    for (let i = 0; i <= a1.length - b1.length; i++) {
+        let match = true;
+        for (let j = 0; j < sub.length; j++) {
+            if (a1[i + j] !== b1[j]) {
+                match = false;
+                break;
+            }
+        }
+    }
+    if (match) return false
 
-const answer = a1.replace(b1) === a1 ? 'No' : "Yes"
+    return true
+}
 
-console.log(answer)
+console.log(solution(a, b))
