@@ -4,7 +4,7 @@ const n = Number(input[0]);
 // Please Write your code here.
 const fibo = [1, 1]
 const f = (i) => {
-    if (i === n) return
+    if (i === n || n === 1) return
     fibo[i] = fibo[i - 1] + fibo[i - 2]
 
     return f(i + 1)
