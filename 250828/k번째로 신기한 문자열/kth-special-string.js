@@ -9,7 +9,7 @@ for (let i = 0; i < Number(n); i++) {
 // Please Write your code here.
 const s = []
 for (let i = 0; i < words.length; i++) {
-    if (words[i].indexOf(t) !== -1) s.push(words[i])
+    if (words[i].indexOf(t) === 0) s.push(words[i])
 }
 s.sort()
 console.log(s[k - 1])
