@@ -13,11 +13,11 @@ for (let i = 0; i < 5; i++) {
 students.sort((a, b) => a.name.localeCompare(b.name))
 console.log("name")
 for (let s of students) {
-    console.log(s.name, s.height, s.weight)
+    console.log(s.name, s.height, s.weight.toFixed(1))
 }
 console.log("")
 students.sort((a, b) => b.height - a.height)
 console.log("height")
 for (let s of students) {
-    console.log(s.name, s.height, s.weight)
+    console.log(s.name, s.height, s.weight.toFixed(1))
 }
