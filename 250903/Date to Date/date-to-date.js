@@ -14,4 +14,4 @@ function dayOfYear(m, d) {
 
 const a = dayOfYear(m1, d1)
 const b = dayOfYear(m2, d2)
-console.log(b - a)
+console.log(a === b ? 1 : b - a)
