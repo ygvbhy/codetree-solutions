@@ -14,17 +14,19 @@ for (let i = 0; i < n; i++) {
     const [xStr, dir] = commands[i].split(" ");
     const x = Number(xStr);
 
-    let newPos = dir === 'L' ? pos - x : pos + x;
+    let start, end;
 
-    const start = Math.min(pos, newPos)
-    const end = Math.max(pos, newPos);
-
-    for (let j = start; j < end; j++) {
-        if (dir === 'L') line[j] = 1
-        else line[j] = 2
+    if (dir === 'L') {
+        start = pos - (x - 1);
+        end = pos + 1
+        for (let j = start; j < end; j++) line[j] = 1;
+        pos = pos - (x - 1);
+    } else {
+        start = pos;
+        end = pos + x;
+        for (let j = start; j < end; j++) line[j] = 2;
+        pos = pos + (x - 1);
     }
-
-    pos = newPos
 }
 
 const w = line.filter(n => n === 1).length;
