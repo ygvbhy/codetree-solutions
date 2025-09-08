@@ -11,7 +11,23 @@ const line = new Array(OFFSET * 2 + 1).fill(0);
 let pos = OFFSET;
 
 for (let i = 0; i < n; i++) {
+    const [xStr, dir] = commands[i].split(" ");
+    const x = Number(xStr);
 
+    let newPos = dir === 'L' ? pos - x : pos + x;
+
+    const start = Math.min(pos, newPos)
+    const end = Math.max(pos, newPos);
+
+    for (let j = start; j < end; j++) {
+        if (dir === 'L') line[j] = 1
+        else line[j] = 2
+    }
+
+    pos = newPos
 }
 
-console.log(commands)
+const w = line.filter(n => n === 1).length;
+const b = line.filter(n => n === 2).length;
+
+console.log(w, b)
