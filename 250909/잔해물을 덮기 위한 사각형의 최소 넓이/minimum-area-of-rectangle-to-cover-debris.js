@@ -38,4 +38,11 @@ for (let x = 0; x <= MAX; x++){
     }
 }
 
-console.log((area[2] - area[0] + 1) * (area[3] - area[1] + 1))
+const isSame = JSON.stringify(area) === JSON.stringify([MAX + 1, MAX + 1, -MAX - 1, -MAX - 1])
+if (isSame) {
+    console.log(0)
+    return
+}
+
+const answer = (area[2] - area[0] + 1) * (area[3] - area[1] + 1)
+console.log(answer)
