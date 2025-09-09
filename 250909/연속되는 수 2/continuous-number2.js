@@ -10,7 +10,7 @@ let count = 0;
 let stack = []
 
 for (let i = 0; i < n; i++) {
-    if (stack.length === 0) {
+    if (i === 0) {
         stack.push(arr[i])
         count++
         max++
@@ -21,13 +21,12 @@ for (let i = 0; i < n; i++) {
     if (top === arr[i]) {
         stack.push(arr[i])
         count++
-        continue;
     } else {
         stack = []
         stack.push(arr[i])
-        max = max > count ? max : count
         count = 1
     }
+    max = max > count ? max : count
 }
 
 console.log(max)
