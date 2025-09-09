@@ -13,6 +13,7 @@ for (let i = 0; i < n; i++) {
     if (stack.length === 0) {
         stack.push(arr[i])
         count++
+        max++
         continue;
     }
 
