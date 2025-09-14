@@ -15,10 +15,10 @@ for (const i of moves) {
         start[0] += +num
     }
     else if (s === 'S') {
-        start[1] -= num
+        start[1] -= +num
     }
     else if (s === 'W') {
-        start[0] += num
+        start[0] -= +num
     }
 }
 
