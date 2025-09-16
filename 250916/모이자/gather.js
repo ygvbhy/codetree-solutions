@@ -5,20 +5,21 @@ const n = Number(input[0]);
 const arr = input[1].split(' ').map(Number);
 
 // Please Write your code here.
-let min = 1000000000
-for (let i = 0; i < n; i++) {
-    // 이전 집
-    let cnt = 0;
-    let range = 1
-    for (let j = i - 1; j >= 0; j--) {
-        cnt += arr[j] * range++
-    }
-    range = 1
-    for (let j = i + 1; j < n; j++){
-        cnt += arr[j] * range++
-    }
+const total = arr.reduce((s, v) => s + v, 0)
+const target = Math.floor((total + 1) / 2)
 
-    min = Math.min(min, cnt)
+let perf = 0, m = 0;
+for (let i = 0; i < n; i++) {
+    perf += arr[i]
+    if (perf >= target) {
+        m = i;
+        break;
+    }
 }
 
-console.log(min)
+let cost = 0;
+for (let i = 0; i< n; i++) {
+    cost += arr[i] * Math.abs(i - m)
+}
+
+console.log(cost)
