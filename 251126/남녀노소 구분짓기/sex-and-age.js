@@ -1,0 +1,10 @@
+const fs = require("fs");
+let [a, b] = fs.readFileSync(0).toString().trim().split('\n').map(Number);
+
+if (a === 0) {
+    if (b >= 19) console.log('MAN')
+    else console.log("BOY")
+} else {
+    if (b >= 19) console.log('WOMAN')
+    else console.log("GIRL")
+}
